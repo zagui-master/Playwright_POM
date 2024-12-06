@@ -1,7 +1,7 @@
 import { Page, Locator } from "@playwright/test"
 
 export class HeaderPage {
-  
+
   readonly page: Page
   readonly burgerMenu: Locator
   readonly closeMenuButton: Locator
@@ -10,7 +10,7 @@ export class HeaderPage {
   readonly menuOptionLogout: Locator
   readonly menuOptionResetAppState: Locator
   readonly titleSwagLabs: Locator
-  readonly shoppingCartButton: Locator
+  readonly shoppingCartIcon: Locator
 
   constructor(page: Page) {
     this.page = page
@@ -21,6 +21,6 @@ export class HeaderPage {
     this.menuOptionLogout = page.getByRole('link', { name: 'Logout' })
     this.menuOptionResetAppState = page.getByRole('link', { name: 'Reset App State' })
     this.titleSwagLabs = page.locator('div[class="app_logo"]')
-    this.shoppingCartButton = page.locator('div[data-test="shopping-cart-link"]')
+    this.shoppingCartIcon = page.locator('a[data-test="shopping-cart-link"]')
   }
 }
